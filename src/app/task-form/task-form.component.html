@@ -1,0 +1,65 @@
+<div class="d-flex flex-row justify-content-end id-div">
+  <span class="mx-2 fs-5"># Task Id - {{ id }}</span>
+</div>
+<div class="d-flex flex-column mt-4 mx-5" style="height: 80vh">
+  <div class="d-flex flex-row mt-2">
+    <span class="col-2 fs-6">Task Title <span class="required">*</span></span>
+    <div class="col-9">
+      <input class="w-100" [(ngModel)]="title" />
+    </div>
+  </div>
+
+  <div class="d-flex flex-row mt-5">
+    <span class="col-2 fs-6"
+      >Task Description <span class="required">*</span></span
+    >
+    <div class="col-9">
+      <input class="w-100" [(ngModel)]="description" />
+    </div>
+  </div>
+
+  <div class="d-flex flex-row mt-5">
+    <span class="col-2 fs-6">Status <span class="required">*</span></span>
+    <div class="col-9">
+      <mat-form-field appearance="outline" class="w-100" title="Commands">
+        <mat-select [(ngModel)]="status.field" class="font-size">
+          <mat-option *ngFor="let item of statusList" [value]="item">
+            {{ item }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-center mt-3">
+    <button
+      style="background: #00316a; color: white"
+      class="btn-primary mx-3"
+      *ngIf="action.create"
+      type="Submit"
+      mat-raised-button
+      (click)="createTask()"
+    >
+      Submit
+    </button>
+    <button
+      style="background: #00316a; color: white"
+      class="btn-primary mx-3"
+      *ngIf="action.edit"
+      type="Submit"
+      mat-raised-button
+      (click)="updateTask()"
+    >
+      Update
+    </button>
+    <button
+      style="background: #d72f2f; color: white"
+      class="btn-primary mx-3"
+      type="Submit"
+      mat-raised-button
+      (click)="goToList()"
+    >
+      Go To List
+    </button>
+  </div>
+</div>

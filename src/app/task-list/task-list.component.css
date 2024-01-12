@@ -1,0 +1,18 @@
+::ng-deep .mat-mdc-table .mdc-data-table__header-row {
+    height: 46px;
+    /* background: #fc2424; */
+    background: #fe1d1d;
+  }
+  th {
+    color: white;
+  }
+  ::ng-deep .mat-mdc-table .mdc-data-table__row {
+    height: 35px !important;
+    /* background: rgb(250 242 226); */
+  }
+  tr:nth-child(even) {
+    background: rgb(250, 226, 226);
+  }
+  .add-task-icon{
+    background: rgb(245, 224, 237);
+  }
